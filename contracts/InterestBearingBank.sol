@@ -6,19 +6,20 @@ pragma solidity ^0.8.0;
 */
 
 contract DBank {
-    
+    // 
     mapping(address => bool) public isDeposited;
     mapping(address => uint) public etherBalanceOf;
     mapping(address => uint) public depositStart;
 
     address payable supplier;
-    uint interestSupply;
+    uint public interestSupply;
 
-    uint fakeNow;
+    uint public fakeNow;
 
-    constructor () {
+    constructor () payable {
         supplier = payable(msg.sender);
         fakeNow = block.timestamp;
+        interestSupply += msg.value;
     }
 
     function fastForward() public {
@@ -65,13 +66,5 @@ contract DBank {
         etherBalanceOf[msg.sender] = 0;
         depositStart[msg.sender] = 0;
         isDeposited[msg.sender] = false;
-    }
-
-    function supplyLoan(uint _amount) public {
-
-    }
-
-    function repayLoan() public {
-
     }
 }

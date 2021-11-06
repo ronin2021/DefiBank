@@ -7,7 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "constructor"
 			},
 			{
@@ -77,9 +77,35 @@
 			},
 			{
 				"inputs": [],
+				"name": "fakeNow",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "fastForward",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "interestSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -103,29 +129,9 @@
 			},
 			{
 				"inputs": [],
-				"name": "repayLoan",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "supplyEth",
 				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					}
-				],
-				"name": "supplyLoan",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -164,11 +170,11 @@
 	},
 	"sources": {
 		"contracts/InterestBearingBank.sol": {
-			"keccak256": "0x0f6de4041e3f60f04eb8d6f7eaae139478022c43f6b1f7bc8ded71c49ef4d38b",
+			"keccak256": "0x6f239d386c02756b695b6ebe5524b095e1e1dd484b820b4efba3f1a58d7f9e4a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://87a5d5fdf1debb065e52c971e6b01245ed4684f1972245b5a7b91127bab0f487",
-				"dweb:/ipfs/QmSV9vSaZjkJkXdkyf5PPgFQC1PayFUWwa2NAduZMvdnuK"
+				"bzz-raw://c4f1ab4c49c403b06fd30eecee6eaff9dccfb47e3676f38df772e0642e31dad8",
+				"dweb:/ipfs/QmY43JnjbNbVcCx1CWzz91vn11wqUh3mG1BQ9Mc2MzU2cm"
 			]
 		}
 	},
