@@ -1,4 +1,4 @@
-# Scalable-Defi-Bank-Account
+# Scalable-Defi-Bank
 A Solidity Smart Contract that acts like a bank and pays out interest in the cryptocurrecny Ethereum.
 
 ###
