@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./DividendToken.sol";
+/*
+*
+*/
 
 contract DBank {
-    Token private token;
-
+    
     mapping(address => bool) public isDeposited;
     mapping(address => uint) public etherBalanceOf;
     mapping(address => uint) public depositStart;
@@ -22,6 +23,14 @@ contract DBank {
 
     function fastForward() public {
         fakeNow += 100 days;
+    }
+
+    function cleanSlate() public OnlySupplier {
+        payable(msg.sender).transfer(payable(address(this)).balance);
+    }
+
+    function balanceOfContract() public view returns(uint) {
+        return payable(address(this)).balance;
     }
 
     modifier OnlySupplier() {
@@ -46,7 +55,7 @@ contract DBank {
         require(isDeposited[msg.sender] == true, 'Error, user has no funds in the dBank.');
 
         uint depositTime = fakeNow - depositStart[msg.sender];
-        uint interestPerSecond = 3000 * (etherBalanceOf[msg.sender] / 1e16);
+        uint interestPerSecond = 300000000 * (etherBalanceOf[msg.sender] / 1e16);
         uint interest = depositTime * interestPerSecond;
 
         payable(msg.sender).transfer(interest);
